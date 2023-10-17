@@ -33,7 +33,7 @@ public class ManualCrimeListActivity extends AppCompatActivity {
 
     private void updateUI() {
         mContainer.removeAllViews();
-        CrimeLab lab = CrimeLab.get(getApplicationContext());
+        CrimeLab lab = CrimeLab.get(this);
         for(final Crime crime : lab.getCrimes()) {
             View crimeView = getCrimeView(crime);
             mContainer.addView(crimeView);
@@ -67,7 +67,7 @@ public class ManualCrimeListActivity extends AppCompatActivity {
         columnForCrime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), CrimeActivity.class);
+                Intent intent= new Intent(ManualCrimeListActivity.this, CrimeActivity.class);
                 intent.putExtra(CrimeFragment.CRIME_ID, crime.getId());
                 startActivity(intent);
             }

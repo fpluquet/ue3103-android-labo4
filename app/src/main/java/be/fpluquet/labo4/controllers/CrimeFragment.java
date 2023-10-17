@@ -51,6 +51,7 @@ public class CrimeFragment extends androidx.fragment.app.Fragment{
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 mCrime.setTitle(s.toString());
+                CrimeLab.get(getContext()).updateCrime(mCrime);
             }
 
             @Override
@@ -69,6 +70,7 @@ public class CrimeFragment extends androidx.fragment.app.Fragment{
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 mCrime.setSolved(isChecked);
+                CrimeLab.get(getContext()).updateCrime(mCrime);
             }
         });
         return v;

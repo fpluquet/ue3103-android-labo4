@@ -26,7 +26,7 @@ public class CrimeListActivity extends SingleFragmentActivity{
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == 0) {
             for(int i = 0; i < 10; i++) {
-                CrimeLab.get(getApplicationContext()).addCrime(new Crime());
+                CrimeLab.get(this).addCrime(new Crime());
             }
             ((CrimeListFragment)this.fragment).updateUI();
         }
